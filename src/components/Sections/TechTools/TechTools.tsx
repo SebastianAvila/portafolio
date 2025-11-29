@@ -21,6 +21,21 @@ import gsap from "gsap";
 // Cada objeto tiene: title (nombre), svg (URL o código SVG), isBackend (tipo), filter (efecto visual)
 const DEFAULT_ICONS = [
   // FRONTEND TECHNOLOGIES
+
+  {
+    title: "Vue.js",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    isBackend: false,
+    OtherTech: false,
+    filter: false,
+  },
+  {
+    title: "Vuetify",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuetify/vuetify-original.svg",
+    isBackend: false,
+    OtherTech: false,
+    filter: false,
+  },
   {
     title: "JavaScript",
     svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
@@ -35,13 +50,13 @@ const DEFAULT_ICONS = [
     OtherTech: false,
     filter: false,
   },
-  {
-    title: "React",
-    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    isBackend: false,
-    OtherTech: false,
-    filter: false,
-  },
+  // {
+  //   title: "React",
+  //   svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  //   isBackend: false,
+  //   OtherTech: false,
+  //   filter: false,
+  // },
   {
     title: "HTML5",
     svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
@@ -70,13 +85,13 @@ const DEFAULT_ICONS = [
     OtherTech: false,
     filter: false,
   },
-  {
-    title: "Sass",
-    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
-    isBackend: false,
-    OtherTech: false,
-    filter: false,
-  },
+  // {
+  //   title: "Sass",
+  //   svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+  //   isBackend: false,
+  //   OtherTech: false,
+  //   filter: false,
+  // },
   // BACKEND TECHNOLOGIES
   {
     title: "Node.js",
@@ -103,14 +118,51 @@ const DEFAULT_ICONS = [
     title: "PostgreSQL",
     svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     isBackend: true,
-    OtherTech: true,
+    OtherTech: false,
     filter: false,
   },
   {
     title: "Git",
     svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    OtherTech: true,
+    filter: false,
+  },
+    {
+    title: "GitHub",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    OtherTech: true,
+    filter: false,
+  },
+   {
+    title: "Firebase",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
     isBackend: true,
     OtherTech: false,
+    filter: false,
+  },
+  {
+    title: "Laravel",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    isBackend: true,
+    OtherTech: false,
+    filter: false,
+  },
+   {
+    title: "Go",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+    OtherTech: true,
+    filter: false,
+  },
+    {
+    title: "Figma",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    OtherTech: true,
+    filter: false,
+  },
+  {
+    title: "Postman",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+    OtherTech: true,
     filter: false,
   },
 ];
@@ -121,12 +173,14 @@ const TechTools = ({}: any) => {
   const icons = DEFAULT_ICONS;
 
   // Filtra solo las tecnologías frontend (isBackend = false)
-  let FrontendTools = icons && icons.filter((icon: any) => !icon.isBackend);
+  // Excluir ítems marcados como OtherTech para que no aparezcan en Frontend
+  let FrontendTools = icons && icons.filter((icon: any) => !icon.isBackend && !icon.OtherTech);
 
   // Filtra solo las tecnologías backend (isBackend = true)
   let BackendTools = icons && icons.filter((icon: any) => icon.isBackend);
 
-  // Filtra solo las otras techvnologies (OtherTech = true)
+  // Filtra solo las otras technologies (OtherTech = true)
+  // Esta sección agrupa ítems que no pertenecen ni al frontend ni al backend
   let OtherTech = icons && icons.filter((icon: any) => icon.OtherTech);
 
   // Obtiene el modo de color actual (light/dark) del contexto global
@@ -282,7 +336,7 @@ const TechTools = ({}: any) => {
                   );
                 })}
               </Grid>
-              {/* Seccion de otras tehc que tengo */}
+              {/* Seccion de otras tech que tengo */}
               <Grid item sx={centeredStyles}>
                 <Typography
                   variant="h2"
@@ -313,7 +367,7 @@ const TechTools = ({}: any) => {
                 xs={12}
                 item
               >
-                {/* MAP: Recorre OtherTech (backend) y crea un ToolCard por cada una */}
+                {/* MAP: Recorre OtherTech  y crea un ToolCard por cada una */}
                 {OtherTech.map((tool: any) => {
                   return (
                     <ToolCard
