@@ -53,6 +53,37 @@ const Home: NextPage = ({ projectsArray, iconsArray }: any) => {
 
 export default Home;
 
+// Array local de proyectos (fallback si Contentful está vacío)
+const DEFAULT_PROJECTS = [
+  {
+    title: "MFA App - Soft Administrativo",
+    description:
+      "App web para la gestion de personal contable, organizacion de eventos y facilitación de procesos administrativos. Construida con Vue.js, Node.js y Firebase. ",
+    img: "https://via.placeholder.com/500x300?text=E+Commerce",
+    siteUrl: "https://e-compliance.web.app/",
+    repoUrl: "https://github.com/SebastianAvila/mfa_app.git",
+    isReversed: false,
+  },
+  {
+    title: "Este Es Mi Portfolio",
+    description:
+      "Mi portafolio personal construido con Next.js, Material-UI y GSAP para animaciones. Presenta mis proyectos, habilidades y experiencia profesional.",
+    img: "https://via.placeholder.com/500x300?text=Task+Manager",
+    siteUrl: "https://example-tasks.com",
+    repoUrl: "https://github.com/SebastianAvila/portafolio.git",
+    isReversed: true,
+  },
+  {
+    title: "Analytics Dashboard",
+    description:
+      "Data visualization dashboard using React, D3.js, and Express backend. Display real-time metrics and generate custom reports.",
+    img: "https://via.placeholder.com/500x300?text=Analytics",
+    siteUrl: "https://example-analytics.com",
+    repoUrl: "https://github.com/yourusername/analytics-dashboard",
+    isReversed: false,
+  },
+];
+
 export async function getStaticProps() {
   function removeEmpty(obj: any) {
     return Object.fromEntries(
@@ -65,7 +96,9 @@ export async function getStaticProps() {
     const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
     if (!space || !accessToken) {
-      throw new Error("Missing Contentful environment variables (NEXT_PUBLIC_CONTENTFUL_SPACE_ID or NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN)");
+      throw new Error(
+        "Missing Contentful environment variables (NEXT_PUBLIC_CONTENTFUL_SPACE_ID or NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN)"
+      );
     }
 
     // then, send a request to Contentful (using the same URL from GraphiQL)
@@ -112,43 +145,53 @@ export async function getStaticProps() {
 
     // grab the data from our response
     const jsonResponse = await res.json();
-    
+
     if (jsonResponse.errors) {
       throw new Error(`GraphQL errors: ${JSON.stringify(jsonResponse.errors)}`);
     }
 
     const { data } = jsonResponse;
-    
+
     if (!data || !data.iconsCollection || !data.projectCollection) {
-      throw new Error("Contentful response missing expected fields (iconsCollection or projectCollection)");
+      throw new Error(
+        "Contentful response missing expected fields (iconsCollection or projectCollection)"
+      );
     }
 
     let iconsArray = [];
-    if (data?.iconsCollection?.items && Array.isArray(data.iconsCollection.items)) {
+    if (
+      data?.iconsCollection?.items &&
+      Array.isArray(data.iconsCollection.items)
+    ) {
       for (let i = 0; i < data.iconsCollection.items.length; i++) {
         let clearedIcon = removeEmpty(data.iconsCollection.items[i]);
         iconsArray.push(clearedIcon);
       }
     }
 
-    console.log(`✓ Contentful data loaded: ${data.projectCollection.items?.length || 0} projects, ${iconsArray.length} icons`);
-
+    console.log(
+      `✓ Contentful data loaded: ${
+        data.projectCollection.items?.length || 0
+      } projects, ${iconsArray.length} icons`
+    );
+    console.log("Projects from Contentful:", data?.projectCollection.items);
     return {
       props: {
-        projectsArray: data?.projectCollection.items || [],
+        projectsArray: data?.projectCollection.items?.length > 0 ? data.projectCollection.items : DEFAULT_PROJECTS,
         iconsArray,
       },
-      revalidate: 3600, // ISR: revalidate each hour
     };
   } catch (err) {
-    console.error("❌ getStaticProps error:", err instanceof Error ? err.message : String(err));
-    console.log("⚠️ Usando iconos locales por defecto en TechTools.tsx");
+    console.error(
+      "❌ getStaticProps error:",
+      err instanceof Error ? err.message : String(err)
+    );
     return {
       props: {
-        projectsArray: [],
-        iconsArray: [], // TechTools usará DEFAULT_ICONS como fallback
+        projectsArray: DEFAULT_PROJECTS, // ← Usa fallback
+        iconsArray: [],
       },
-      revalidate: 60, // retry sooner if there was an error
+      revalidate: 60,
     };
   }
 }
