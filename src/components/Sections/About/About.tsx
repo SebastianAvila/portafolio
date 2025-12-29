@@ -83,7 +83,7 @@ const About = () => {
                             }
                         }}
                             fontWeight='600'>
-                            About Me, Im Vito Medlej
+                         Sobre mi, soy Sebastian Avila
                         </Typography>
                         <Typography
                             variant='h2'
@@ -94,7 +94,7 @@ const About = () => {
                                 sm: '1em'
                             }
                         }}>
-                      A 20-year-old Lebanon-based software developer. I first started developing games using Unity3D, but soon realized I preferred web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
+                    Egresado de la licenciatura en ingeniería de software, con experiencia en desarrollo web full-stack. Me especializo en crear aplicaciones web modernas y responsivas utilizando tecnologías como React, Next.js, Node.js y bases de datos NoSQL como MongoDB y Firebase.
 
                         </Typography>
                     </Box>
@@ -108,11 +108,11 @@ const About = () => {
                             },
                             pb:'.5em'
                         }}>
-                      Being self-taught made me appreciate education; thus, I&apos;m studying Management Information Systems simultaneously. Business and technology are both my passions.
+                   Actualmente me encuentro en la búsqueda de nuevas oportunidades laborales donde pueda aplicar mis conocimientos y habilidades para contribuir al éxito de proyectos innovadores. Me apasiona aprender nuevas tecnologías y mejorar continuamente mis capacidades como desarrollador.
 
                         </Typography>
                     <ReadMore>
-                    Aside from working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym, and other things we humans do. If any of what I said seems interesting, then please do not hesitate to send me a message.
+                        Si quieres saber más sobre mi experiencia y habilidades, no dudes en contactarme o visitar mi portafolio para ver algunos de mis proyectos destacados.
                     </ReadMore>
                 </Grid>
             </Grid>

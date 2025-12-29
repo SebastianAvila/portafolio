@@ -72,7 +72,7 @@ const CTA = () => {
                         }
                     }}
                         fontWeight='600'>
-                        What&apos;s holding you back? Send me a message!
+                        ¿Quieres trabajar conmigo?
                     </Typography>
                     <Box
                         sx={{
@@ -98,7 +98,7 @@ const CTA = () => {
                             padding: '.5em 3.5em'
                         }}
                             variant='outlined'>
-                            Contact
+                            ¡Contactame!
                         </Button>
                     </Box>
 
