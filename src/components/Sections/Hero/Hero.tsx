@@ -191,7 +191,7 @@ const Hero = () => {
                   zIndex: "2",
                 }}
                 className="img1"
-                src={`https://scontent.fcjs3-1.fna.fbcdn.net/v/t39.30808-6/540364872_24253901477637265_2137569645738526925_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFyGcTP-quZOW5vhxsYPwBPsZ8T72-6wjuxnxPvb7rCO_Xn35H0sr4QQrhVNujMF2omKLj6z7s_cricBvIh1PYU&_nc_ohc=8B8LKXBHfmgQ7kNvwGqRdZ2&_nc_oc=Adlm-gH6rzyyvgzI4t3JJNjls58lgEJu96O2yOscN2iX0vwEb386OtIWZ8qKpmegKeY&_nc_zt=23&_nc_ht=scontent.fcjs3-1.fna&_nc_gid=iweThAZJqDkfQvIoaVqC9g&oh=00_AfrjD3G6ePmcC_hFaWM8ltQnBpsEwmsnGO9U6DCXSTEbwg&oe=696743F9`}
+                src={`https://drive.google.com/file/d/1_Tcs7ohP8VHo5T4r-Nz3runDbcikoS7a/view?usp=sharing`}
                 alt="Personal Image"
               />
               <Box
