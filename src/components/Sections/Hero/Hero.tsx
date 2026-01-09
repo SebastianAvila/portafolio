@@ -191,7 +191,7 @@ const Hero = () => {
                   zIndex: "2",
                 }}
                 className="img1"
-                src={`https://drive.google.com/file/d/1_Tcs7ohP8VHo5T4r-Nz3runDbcikoS7a/view?usp=sharing`}
+                src="/images/personal_profile.jpg"
                 alt="Personal Image"
               />
               <Box
