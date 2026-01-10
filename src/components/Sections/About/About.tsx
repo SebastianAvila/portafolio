@@ -1,127 +1,143 @@
-import { Container, Box, Grid } from '@mui/material';
-import Image from 'next/image'
-import Typography from '@mui/material/Typography';
-import ReadMore from '../ReadMore/ReadMore';
-import { ColorModeContext } from '../../../../pages/_app';
-import { useContext } from 'react';
+import { Container, Box, Grid } from "@mui/material";
+import Image from "next/image";
+import Typography from "@mui/material/Typography";
+import ReadMore from "../ReadMore/ReadMore";
+import { ColorModeContext } from "../../../../pages/_app";
+import { useContext } from "react";
 const About = () => {
-    const colorMode = useContext(ColorModeContext)
-    return (
+  const colorMode = useContext(ColorModeContext);
+  return (
     <>
-        <Container
-        id='about'
-            maxWidth='lg'
-            sx={{
-            margin: '0 auto',
-            py: '6em',
-          
-        }}>
-            <Grid
-                container
+      <Container
+        id="about"
+        maxWidth="lg"
+        sx={{
+          margin: "0 auto",
+          py: "6em",
+        }}
+      >
+        <Grid
+          container
+          sx={{
+            justifyContent: {
+              sm: "center",
+              md: "space-between",
+            },
+          }}
+        >
+          <Grid item xs={12} sm={12} md={4} lg={5}>
+            <Box
+              sx={{
+                maxWidth: "400px",
+                width: "100%",
+                height: "450px",
+                margin: "0 auto",
+                boxShadow: {
+                  xs: "-.5em 1.5em 0px #0092ff",
+                  sm: "-1.5em 1.5em 0px #0092ff",
+                },
+                position: "relative",
+              }}
+            >
+              <Box
                 sx={{
-                justifyContent: {
-                    sm: 'center',
-                    md: 'space-between'
-                }
-            }}>
+                  width: "100px",
+                  height: "100px",
+                  zIndex: "0",
+                  position: "absolute",
+                  right: {
+                    xs: "-4%",
+                    sm: "90%",
+                  },
 
-                <Grid item xs={12} sm={12} md={4} lg={5}>
-                    <Box
-                        sx={{
-                        maxWidth: '400px',
-                        width: '100%',
-                        height: '450px',
-                        margin: '0 auto',
-                        boxShadow: {
-                            xs: '-.5em 1.5em 0px #0092ff',
-                            sm: '-1.5em 1.5em 0px #0092ff'
-                        },
-                        position: 'relative'
-                    }}>
-                        <Box
-                            sx={{
-                            width: '100px',
-                            height: '100px',
-                            zIndex: '0',
-                            position: 'absolute',
-                            right: {
-                                xs: '-4%',
-                                sm: '90%'
-                            },
-                            
-                            bottom: {
-                                xs: '-5%',
-                                sm: '-10%'
-                            },
-                            background: 'transparent',
-                            backgroundImage:colorMode.mode === 'dark' ? 'radial-gradient(white 2px, transparent 0)' : 'radial-gradient(black 2px, transparent 0)',
-                            backgroundSize: '15px 13px'
-                        }}></Box>
-                        <Image
-                            alt='Personal Image'
-                            className='img1 '
-                            layout='fill'
-                            src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659776757/20211226_154523_-_Copy_hhy2kp.jpg`}/>
-                    </Box>
-                </Grid>
-                <Grid item xs={12} sm={12} md={7.5} lg={7}>
-                    <Box sx={{
-                        pb: '.5em'
-                    }}>
-                        <Typography
-                            variant='h1'
-                            sx={{
-                            fontSize: {
-                                xs: '2.2em',
-                                sm: '2.5em',
-                                md: '3em'
-                            },
-                            py: '.5em',
-                            pt: {
-                                xs: '1.8em',
-                                md:0,
-                            }
-                        }}
-                            fontWeight='600'>
-                         Sobre mi, soy Sebastian Avila
-                        </Typography>
-                        <Typography
-                            variant='h2'
-                            sx={{
-                            maxWidth: '570px',
-                            fontSize: {
-                                xs: '.8em',
-                                sm: '1em'
-                            }
-                        }}>
-                    Egresado de la licenciatura en ingeniería de software, con experiencia en desarrollo web full-stack. Me especializo en crear aplicaciones web modernas y responsivas utilizando tecnologías como React, Next.js, Node.js y bases de datos NoSQL como MongoDB y Firebase.
+                  bottom: {
+                    xs: "-5%",
+                    sm: "-10%",
+                  },
+                  background: "transparent",
+                  backgroundImage:
+                    colorMode.mode === "dark"
+                      ? "radial-gradient(white 2px, transparent 0)"
+                      : "radial-gradient(black 2px, transparent 0)",
+                  backgroundSize: "15px 13px",
+                }}
+              ></Box>
+              <Image
+                alt="Personal Image"
+                className="img1 "
+                layout="fill"
+                src="/images/personal_profile.jpg"
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={7.5} lg={7}>
+            <Box
+              sx={{
+                pb: ".5em",
+              }}
+            >
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: {
+                    xs: "2.2em",
+                    sm: "2.5em",
+                    md: "3em",
+                  },
+                  py: ".5em",
+                  pt: {
+                    xs: "1.8em",
+                    md: 0,
+                  },
+                }}
+                fontWeight="600"
+              >
+                Sobre mi, soy Sebastian Avila
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  maxWidth: "570px",
+                  fontSize: {
+                    xs: ".8em",
+                    sm: "1em",
+                  },
+                }}
+              >
+                Egresado de la licenciatura en ingeniería de software, con
+                experiencia en desarrollo web full-stack. Me especializo en
+                crear aplicaciones web modernas y responsivas utilizando
+                tecnologías como React, Next.js, Node.js y bases de datos NoSQL
+                como MongoDB y Firebase.
+              </Typography>
+            </Box>
+            <Typography
+              variant="h2"
+              sx={{
+                maxWidth: "570px",
+                fontSize: {
+                  xs: ".8em",
+                  sm: "1em",
+                },
+                pb: ".5em",
+              }}
+            >
+              Actualmente me encuentro en la búsqueda de nuevas oportunidades
+              laborales donde pueda aplicar mis conocimientos y habilidades para
+              contribuir al éxito de proyectos innovadores. Me apasiona aprender
+              nuevas tecnologías y mejorar continuamente mis capacidades como
+              desarrollador.
+            </Typography>
+            <ReadMore>
+              Si quieres saber más sobre mi experiencia y habilidades, no dudes
+              en contactarme o visitar mi portafolio para ver algunos de mis
+              proyectos destacados.
+            </ReadMore>
+          </Grid>
+        </Grid>
+      </Container>
+    </>
+  );
+};
 
-                        </Typography>
-                    </Box>
-                    <Typography
-                            variant='h2'
-                            sx={{
-                            maxWidth: '570px',
-                            fontSize: {
-                                xs: '.8em',
-                                sm: '1em'
-                            },
-                            pb:'.5em'
-                        }}>
-                   Actualmente me encuentro en la búsqueda de nuevas oportunidades laborales donde pueda aplicar mis conocimientos y habilidades para contribuir al éxito de proyectos innovadores. Me apasiona aprender nuevas tecnologías y mejorar continuamente mis capacidades como desarrollador.
-
-                        </Typography>
-                    <ReadMore>
-                        Si quieres saber más sobre mi experiencia y habilidades, no dudes en contactarme o visitar mi portafolio para ver algunos de mis proyectos destacados.
-                    </ReadMore>
-                </Grid>
-            </Grid>
-
-        </Container>
-
-        </>
-    
-    )
-}
-
-export default About
+export default About;
