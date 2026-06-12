@@ -191,7 +191,7 @@ const Hero = () => {
                   zIndex: "2",
                 }}
                 className="img1"
-                src="/images/personal_profile.jpg"
+                src="/images/personal_profile.png"
                 alt="Personal Image"
               />
               <Box

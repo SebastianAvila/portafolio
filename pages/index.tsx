@@ -59,7 +59,6 @@ const DEFAULT_PROJECTS = [
     title: "MFA App - Soft Administrativo",
     description:
       "App web para la gestion de personal contable, organizacion de eventos y facilitación de procesos administrativos. Construida con Vue.js, Node.js y Firebase. ",
-    img: "https://via.placeholder.com/500x300?text=E+Commerce",
     siteUrl: "https://e-compliance.web.app/",
     repoUrl: "https://github.com/SebastianAvila/mfa_app.git",
     isReversed: false,
@@ -68,26 +67,16 @@ const DEFAULT_PROJECTS = [
     title: "Este Es Mi Portfolio",
     description:
       "Mi portafolio personal construido con Next.js, Material-UI y GSAP para animaciones. Presenta mis proyectos, habilidades y experiencia profesional.",
-    img: "https://via.placeholder.com/500x300?text=Task+Manager",
     siteUrl: "https://example-tasks.com",
     repoUrl: "https://github.com/SebastianAvila/portafolio.git",
     isReversed: true,
-  },
-  {
-    title: "Analytics Dashboard",
-    description:
-      "Data visualization dashboard using React, D3.js, and Express backend. Display real-time metrics and generate custom reports.",
-    img: "https://via.placeholder.com/500x300?text=Analytics",
-    siteUrl: "https://example-analytics.com",
-    repoUrl: "https://github.com/yourusername/analytics-dashboard",
-    isReversed: false,
   },
 ];
 
 export async function getStaticProps() {
   function removeEmpty(obj: any) {
     return Object.fromEntries(
-      Object.entries(obj).filter(([_, v]) => v != null && v != false)
+      Object.entries(obj).filter(([_, v]) => v != null && v != false),
     );
   }
   try {
@@ -97,7 +86,7 @@ export async function getStaticProps() {
 
     if (!space || !accessToken) {
       throw new Error(
-        "Missing Contentful environment variables (NEXT_PUBLIC_CONTENTFUL_SPACE_ID or NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN)"
+        "Missing Contentful environment variables (NEXT_PUBLIC_CONTENTFUL_SPACE_ID or NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN)",
       );
     }
 
@@ -136,7 +125,7 @@ export async function getStaticProps() {
                 
                   `,
         }),
-      }
+      },
     );
 
     if (!res.ok) {
@@ -154,7 +143,7 @@ export async function getStaticProps() {
 
     if (!data || !data.iconsCollection || !data.projectCollection) {
       throw new Error(
-        "Contentful response missing expected fields (iconsCollection or projectCollection)"
+        "Contentful response missing expected fields (iconsCollection or projectCollection)",
       );
     }
 
@@ -172,19 +161,22 @@ export async function getStaticProps() {
     console.log(
       `✓ Contentful data loaded: ${
         data.projectCollection.items?.length || 0
-      } projects, ${iconsArray.length} icons`
+      } projects, ${iconsArray.length} icons`,
     );
     console.log("Projects from Contentful:", data?.projectCollection.items);
     return {
       props: {
-        projectsArray: data?.projectCollection.items?.length > 0 ? data.projectCollection.items : DEFAULT_PROJECTS,
+        projectsArray:
+          data?.projectCollection.items?.length > 0
+            ? data.projectCollection.items
+            : DEFAULT_PROJECTS,
         iconsArray,
       },
     };
   } catch (err) {
     console.error(
       "❌ getStaticProps error:",
-      err instanceof Error ? err.message : String(err)
+      err instanceof Error ? err.message : String(err),
     );
     return {
       props: {

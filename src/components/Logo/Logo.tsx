@@ -31,7 +31,7 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
                 : ''}small`}
                 src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
                 alt=""/>
-            <CustomLink color={color} fontWeight='600' text='Medlej' href='/'/>
+            <CustomLink color={color} fontWeight='600' text='Bienvenidos a mi portafolio' href='/'/>
         </Box>
     )
 }

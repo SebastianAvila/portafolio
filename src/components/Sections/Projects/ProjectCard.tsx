@@ -48,6 +48,8 @@ const ProjectCard = ({
                     : 'row-reverse'}`
             },
             alignItems: 'center',
+            // ERROR: este translateX inicial desplaza la tarjeta fuera de la pantalla
+            // y provoca overflow horizontal antes de que GSAP la anime.
             transform: isReversed
                 ? 'translateX(-150%)'
                 : 'translateX(150%)'
@@ -67,7 +69,6 @@ const ProjectCard = ({
                 position: 'relative'
             }}>
 
-                <img alt='Project Image' className='img1' src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}

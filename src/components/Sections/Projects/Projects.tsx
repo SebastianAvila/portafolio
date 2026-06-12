@@ -38,12 +38,19 @@ const Projects = ({ projectsArray }: any) => {
     <>
       {projectsArray && projectsArray.length > 0 ? (
         projectsArray.map((project: any, index: number) => (
-          <ProjectCard
+          <Box
             key={project.title}
-            className={`p${index}`}  // Añadido para animación GSAP
-            isReversed={index % 2 !== 0} // Alterna izquierda/derecha
-            {...project} // Pasa todos los campos (title, description, img, etc.)
-          />
+            sx={{
+              overflowX: 'hidden',
+              width: '100%',
+            }}
+          >
+            <ProjectCard
+              className={`p${index}`}  // usado por GSAP para animar la tarjeta
+              isReversed={index % 2 !== 0} // alterna el orden de la tarjeta
+              {...project} // pasa título, descripción, imagen y enlaces
+            />
+          </Box>
         ))
       ) : (
         <Typography sx={{ textAlign: 'center', py: 4, color: 'red' }}>

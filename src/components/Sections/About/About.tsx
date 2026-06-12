@@ -66,7 +66,7 @@ const About = () => {
                 alt="Personal Image"
                 className="img1 "
                 layout="fill"
-                src="/images/personal_profile.jpg"
+                src="/images/personal_profile.png"
               />
             </Box>
           </Grid>

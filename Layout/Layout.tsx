@@ -58,7 +58,7 @@ const Layout = ({ navbarSx, title, children, desc }: ILayout) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* <meta name="description" content="Site Meta Description" /> */}
         <meta name="keywords" content="Personal Portfolio" />
-        <meta name="author" content="Vito Medlej" />
+        <meta name="author" content="Sebastian Avila" />
         <meta name="publisher" content="publisher" />
         <meta name="copyright" content="copyright" />
         <meta name="page-topic" content="Web Development | Blog" />
