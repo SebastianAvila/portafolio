@@ -9,6 +9,7 @@ import {ColorModeContext} from '../../../pages/_app';
 import Logo from '../Logo/Logo';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import ArticleIcon from '@mui/icons-material/Article';
 import { useRouter } from 'next/router';
 
 export const Links = [
@@ -20,6 +21,10 @@ export const Links = [
         text: 'Contact',
         Icon: ConnectWithoutContactIcon,
         url: '/contact'
+    }, {
+        text: 'Blog',
+        Icon: ArticleIcon,
+        url: '/blog'
     }, {
         text: 'Projects',
         Icon: AssignmentTurnedInIcon,

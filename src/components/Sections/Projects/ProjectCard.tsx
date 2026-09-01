@@ -20,7 +20,8 @@ const ProjectCard = ({
     const [elementSize,
         setElementSize] = useState({x: 0, y: 0})
     const onMouseMove = (e : any) => {
-        setCursorPosition({y: e.screenY, x: e.screenX})
+        const rect = e.currentTarget.getBoundingClientRect();
+        setCursorPosition({y: e.clientY - rect.top, x: e.clientX - rect.left})
     }
 
     useEffect(() => {
@@ -47,12 +48,7 @@ const ProjectCard = ({
                     ? 'row'
                     : 'row-reverse'}`
             },
-            alignItems: 'center',
-            // ERROR: este translateX inicial desplaza la tarjeta fuera de la pantalla
-            // y provoca overflow horizontal antes de que GSAP la anime.
-            transform: isReversed
-                ? 'translateX(-150%)'
-                : 'translateX(150%)'
+            alignItems: 'center'
         }}>
             <Box
                 sx={{
@@ -68,7 +64,13 @@ const ProjectCard = ({
                 height: '400px',
                 position: 'relative'
             }}>
-
+                {img && (
+                    <img
+                        src={img}
+                        alt={title}
+                        style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '6px'}}
+                    />
+                )}
             </Box>
             <Box
                 ref={ref}
@@ -136,7 +138,7 @@ const ProjectCard = ({
                         flexWrap: 'wrap',
                         mt: '1em'
                     }}>
-                        <a href={`${siteUrl}`} rel="noreferrer" target="_blank">
+                        {siteUrl && <a href={siteUrl} rel="noreferrer" target="_blank">
 
                             <Button
                                 variant='contained'
@@ -150,8 +152,8 @@ const ProjectCard = ({
                                     Live Site
                                 </Typography>
                             </Button>
-                        </a>
-                        <a href={`${repoUrl}`} rel="noreferrer" target="_blank">
+                        </a>}
+                        {repoUrl && <a href={repoUrl} rel="noreferrer" target="_blank">
 
                             <Button
                                 variant='text'
@@ -167,7 +169,7 @@ const ProjectCard = ({
                                     Check Code
                                 </Typography>
                             </Button>
-                        </a>
+                        </a>}
 
                     </Box>
                 </Box>

@@ -250,18 +250,16 @@ const Contact = () => {
               }}
             >
               <ContactBox
-                href="mailto:sebastian13.avila13@gmail.com
-"
+                href="mailto:sebastian13.avila13@gmail.com"
                 target="_blank"
                 t1="Get in touch"
                 t2="Email Address"
-                t3="sebastian13.avila13@gmail.com
-"
+                t3="sebastian13.avila13@gmail.com"
               />
 
               <ContactBox
                 target="_blank"
-                href={"https://wa.me/9861737766"}
+                href={"https://wa.me/529861737766"}
                 t1="Contact Directly "
                 t2="Phone Number"
                 t3="+52 986-173-7766"

@@ -14,14 +14,14 @@ const Input = ({multi, mt, label,name, type} : IInput) => {
         multiline={multi
         ? multi
         : false}
-        rows={5}
+        rows={multi ? 5 : undefined}
         sx={{
-        color: color || 'black',
+        color,
         input: {
-            color: color || 'black'
+            color
         },
         textarea: {
-            color: color || 'black'
+            color
         },
         width: '100%',
         mt: mt

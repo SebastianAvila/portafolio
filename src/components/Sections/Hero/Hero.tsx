@@ -110,30 +110,6 @@ const Hero = () => {
               >
                 View Projects
               </Button>
-              <a
-                href={`https://drive.google.com/drive/u/0/my-drive`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Button
-                  className="b2 resumeBtn"
-                  sx={{
-                    ...btnStyles,
-                    opacity: 0,
-                    height: "max-content",
-                    padding: "1em 1.5em",
-                    color: "white",
-                    hover: { backgroundColor: "#360a5c" },
-                    width: { xs: "100%", sm: "auto" },
-                    ":hover": {
-                      color: "#ffffffff",
-                    },
-                  }}
-                  variant="text"
-                >
-                  <Typography fontSize="14px">View Resume</Typography>
-                </Button>
-              </a>
             </Box>
           </Box>
         </Grid>

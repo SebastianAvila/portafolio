@@ -12,72 +12,35 @@ const Layout = ({ navbarSx, title, children, desc }: ILayout) => {
     setOpen(state !== undefined ? state : !isOpen);
   };
 
+  const defaultDesc =
+    "Sebastian Avila | Mexican Web Developer | Web Developer and this is my Portfolio and my blog";
+  const pageTitle = title || "Sebastian Avila | Mexican Web Developer";
+  const description = desc || defaultDesc;
+
   return (
     <>
       <Head>
-        <title>
-          {title || "Sebastian Avila| Mexican Web Developer"}
-        </title>
+        <title>{pageTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="shortcut icon"
-          href="https://res.cloudinary.com/dwcu3wcol/image/upload/v1657099811/log_nkmcys.jpg"
-        />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
-        <meta
-          name="description"
-          content={`${
-            desc ||
-            "Sebastian Avila| Mexican Web Developer | Web Developer and this is my Portfolio and my blog"
-          }`}
-        />
+        <meta name="description" content={description} />
 
-        <meta
-          property="og:title"
-          content="Sebastian Avila| Mexican Web Developer"
-        />
-
-        <meta property="og:url" content="https://elvito.netlify.app" />
-
-        <meta
-          property="og:description"
-          content="Sebastian Avila| Mexican Web Developer | Web Developer and this is my Portfolio and my blog "
-        />
-
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content="https://nexosdweb.vercel.app/" />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
+          content="/images/personal_profile.png"
         />
+        <meta name="twitter:card" content="summary_large_image" />
 
-        {/* <!-- Og Type -->
-<meta property="og:type" content="article" /> */}
-
-        <meta httpEquiv="content-language" content="en" />
+        <meta httpEquiv="content-language" content="es" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <meta name="description" content="Site Meta Description" /> */}
-        <meta name="keywords" content="Personal Portfolio" />
+        <meta name="keywords" content="Portfolio, Web Developer, React, Next.js, Full Stack" />
         <meta name="author" content="Sebastian Avila" />
-        <meta name="publisher" content="publisher" />
-        <meta name="copyright" content="copyright" />
-        <meta name="page-topic" content="Web Development | Blog" />
-        <meta name="page-type" content="Blogging" />
-        <meta name="audience" content="Everyone" />
-        {/* <!-- Facebook, whatsapp, instagram, twitter and other popular social media --> */}
-        <meta property="og:title" content={title}/>
-        <meta property="og:description" content="Site Content short description"/>
-        <meta property="og:image" content="http://example.com/thumbnail.jpg"/>
-        <meta property="og:url" content="http://example.com"/>
-        <meta name="twitter:card" content="summary_large_image"/>
-
-        {/* <!-- Some Non-essential but recommended --> */}
-        {/* <meta property="og:site_name" content="Website Name"> <!-- Optional --> */}
-        {/* <meta name="twitter:image:alt" content="Alt text for image"> <!-- Optional --> */}
-
-        {/* <!-- If has need analytics for facebook and twitter --> */}
-        {/* <meta property="fb:app_id" content="your_app_id" /> */}
-        {/* <meta name="twitter:site" content="@website-username"/> */}
       </Head>
       <Navbar toggleDrawer={toggleDrawer} navbarSx={navbarSx} />
       <CustomDrawer isOpen={isOpen} toggleDrawer={toggleDrawer} />

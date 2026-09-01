@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material"
 import { centeredStyles } from "../Sections/Perks/Perks"
-import Image from 'next/image'
 import { ISocialMedia } from "../../Types/Types"
 
 const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
@@ -32,14 +31,13 @@ const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
                   
                 }}>
 
-                    <Image
+                    <img
                         alt='Icon'
                         className={`${filter
                         ? 'filter '
                         : ''} icon`}
-                        width='100%'
-                        height='100%'
-                        src={svg || ''}/>
+                        src={svg || ''}
+                        style={{ width: '100%', height: '100%' }}/>
                 </Box>
                 <Typography
                     variant='h3'

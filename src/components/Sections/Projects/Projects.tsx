@@ -1,43 +1,39 @@
 import {
   Box,
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Tooltip,
   Typography,
 } from "@mui/material";
-import { centeredStyles } from "../Perks/Perks";
 import ProjectCard from "./ProjectCard";
 import { useEffect } from "react";
-import MainTitleAnimation from "../../../gsap/MainTitleAnimation";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { IProjects } from "../../../Types/Types";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Projects = ({ projectsArray }: any) => {
-  console.log("Projects component received:", projectsArray); // Debug log
   useEffect(() => {
-    MainTitleAnimation(".title3", ".title4");
     if (!projectsArray) return;
-    setTimeout(() => {
-      for (let i = 0; i < projectsArray.length; i++) {
-        gsap.to(`.p${i}`, {
+    projectsArray.forEach((_: any, i: number) => {
+      gsap.fromTo(
+        `.p${i}`,
+        { xPercent: i % 2 === 0 ? 100 : -100 },
+        {
+          xPercent: 0,
           duration: 0.8,
-          transform: "translateX(0%)",
-          ease: "easeIn",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: `.p${i}`,
             start: "top 60%",
           },
-        });
-      }
-    }, 100);
+        }
+      );
+    });
   }, [projectsArray]);
 
   return (
-    <>
+    <Box id="ProjectSection" sx={{ width: "100%" }}>
       {projectsArray && projectsArray.length > 0 ? (
-        projectsArray.map((project: any, index: number) => (
+        projectsArray.map((project: IProjects, index: number) => (
           <Box
             key={project.title}
             sx={{
@@ -46,9 +42,9 @@ const Projects = ({ projectsArray }: any) => {
             }}
           >
             <ProjectCard
-              className={`p${index}`}  // usado por GSAP para animar la tarjeta
-              isReversed={index % 2 !== 0} // alterna el orden de la tarjeta
-              {...project} // pasa título, descripción, imagen y enlaces
+              className={`p${index}`}
+              isReversed={index % 2 !== 0}
+              {...project}
             />
           </Box>
         ))
@@ -57,7 +53,7 @@ const Projects = ({ projectsArray }: any) => {
           No projects available
         </Typography>
       )}
-    </>
+    </Box>
   );
 };
 

@@ -50,13 +50,13 @@ const DEFAULT_ICONS = [
     OtherTech: false,
     filter: false,
   },
-  // {
-  //   title: "React",
-  //   svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  //   isBackend: false,
-  //   OtherTech: false,
-  //   filter: false,
-  // },
+  {
+    title: "React",
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    isBackend: false,
+    OtherTech: false,
+    filter: false,
+  },
   {
     title: "HTML5",
     svg: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
@@ -168,20 +168,20 @@ const DEFAULT_ICONS = [
 ];
 
 // === COMPONENTE PRINCIPAL ===
-const TechTools = ({}: any) => {
-  // usa DEFAULT_ICONS
-  const icons = DEFAULT_ICONS;
+const TechTools = ({ icons }: { icons?: any[] }) => {
+  // Usa los iconos de Contentful si vienen; si no, usa el array local (DEFAULT_ICONS)
+  const iconList = icons && icons.length > 0 ? icons : DEFAULT_ICONS;
 
   // Filtra solo las tecnologías frontend (isBackend = false)
   // Excluir ítems marcados como OtherTech para que no aparezcan en Frontend
-  let FrontendTools = icons && icons.filter((icon: any) => !icon.isBackend && !icon.OtherTech);
+  let FrontendTools = iconList && iconList.filter((icon: any) => !icon.isBackend && !icon.OtherTech);
 
   // Filtra solo las tecnologías backend (isBackend = true)
-  let BackendTools = icons && icons.filter((icon: any) => icon.isBackend);
+  let BackendTools = iconList && iconList.filter((icon: any) => icon.isBackend);
 
   // Filtra solo las otras technologies (OtherTech = true)
   // Esta sección agrupa ítems que no pertenecen ni al frontend ni al backend
-  let OtherTech = icons && icons.filter((icon: any) => icon.OtherTech);
+  let OtherTech = iconList && iconList.filter((icon: any) => icon.OtherTech);
 
   // Obtiene el modo de color actual (light/dark) del contexto global
   const colorMode = useContext(ColorModeContext);
@@ -206,6 +206,24 @@ const TechTools = ({}: any) => {
       scrollTrigger: {
         trigger: ".secondTitle", // Se activa cuando este elemento es visible
         start: "top 70%", // Inicia cuando el top del elemento llega al 70% de la pantalla
+      },
+    });
+
+    // Anima las tarjetas de tecnología al entrar en pantalla
+    gsap.to(".toolCard1", {
+      opacity: 1,
+      stagger: 0.08,
+      scrollTrigger: {
+        trigger: ".toolCard1",
+        start: "top 80%",
+      },
+    });
+    gsap.to(".toolCard2", {
+      opacity: 1,
+      stagger: 0.08,
+      scrollTrigger: {
+        trigger: ".toolCard2",
+        start: "top 85%",
       },
     });
   }, []);
@@ -399,7 +417,6 @@ const TechTools = ({}: any) => {
       </Container>
 
       {/* Línea divisoria entre secciones */}
-      <Divider />
       <Divider />
     </>
   );

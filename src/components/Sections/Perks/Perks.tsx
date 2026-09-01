@@ -44,7 +44,17 @@ const Perks = () => {
     
 
     useEffect(() => {
-        MainTitleAnimation('.h1','.h2')
+        MainTitleAnimation('.h1','.h2');
+        gsap.to('.perkCard', {
+            opacity: 1,
+            y: 0,
+            delay: .25,
+            stagger: .25,
+            scrollTrigger: {
+                trigger: '.perkCard',
+                start: 'top 80%'
+            }
+        })
     }, [])
 
     return ( <> <Container

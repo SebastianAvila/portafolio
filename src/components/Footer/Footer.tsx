@@ -1,8 +1,15 @@
 import gsap from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { Box, Typography, Divider, Grid } from "@mui/material";
-
+import { useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ColorModeContext } from "../../../pages/_app";
+
+gsap.registerPlugin(ScrollToPlugin);
+
+const SITE_URL = "https://nexosdweb.vercel.app/";
+
 function Copyright() {
   return (
     <>
@@ -16,13 +23,8 @@ function Copyright() {
       >
         <Typography variant="h1" fontSize="1em">
           {"Copyright © "}
-          <Link
-            color="inherit"
-            target="_blank"
-            rel="noreferrer"
-            href="https://onbeirut.onrender.com"
-          >
-            onbeirut.onrender.com
+          <Link href={SITE_URL} target="_blank" rel="noreferrer">
+            Sebastian Avila
           </Link>{" "}
           {new Date().getFullYear()}
           {"."}
@@ -31,24 +33,38 @@ function Copyright() {
     </>
   );
 }
-const styles = {
-  mt: "1em",
-  display: "flex",
-  flexDirection: "column",
-  gap: "15px",
-  flexWrap: "wrap",
-  color: "white",
-};
 
 function Footer() {
   const router = useRouter();
+  const colorMode = useContext(ColorModeContext);
+  const color = colorMode.mode === "light" ? "black" : "white";
+
+  const scrollToSection = (id: string) => {
+    if (router.pathname === "/") {
+      gsap.to(window, { duration: 0.8, scrollTo: id });
+    } else {
+      router.push("/").then(() => {
+        setTimeout(() => gsap.to(window, { duration: 0.8, scrollTo: id }), 150);
+      });
+    }
+  };
+
+  const styles = {
+    mt: "1em",
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+    flexWrap: "wrap",
+    color,
+  };
+
   return (
     <Box>
       <Divider />
       <Box
         sx={{
           width: "100%",
-          color: "white",
+          color,
           minHeight: "200px",
           display: "flex",
           margin: "0 auto",
@@ -90,10 +106,7 @@ function Footer() {
             <Box className="link" sx={styles}>
               <Typography
                 className="FooterLink"
-                onClick={() => {
-                  router.push("/");
-                  gsap.to(window, { duration: 0.8, scrollTo: `#hero` });
-                }}
+                onClick={() => scrollToSection("#hero")}
               >
                 Home
               </Typography>
@@ -101,10 +114,7 @@ function Footer() {
 
               <Typography
                 className="FooterLink"
-                onClick={() => {
-                  router.push("/");
-                  gsap.to(window, { duration: 0.5, scrollTo: `#about` });
-                }}
+                onClick={() => scrollToSection("#about")}
               >
                 About
               </Typography>

@@ -31,7 +31,7 @@ const Home: NextPage = ({ projectsArray, iconsArray }: any) => {
       >
         <Hero />
         <Perks />
-        <Experience iconsArray={iconsArray} />
+        <Experience icons={iconsArray} />
         <Projects projectsArray={projectsArray} />
         <About />
         <CTA />
@@ -67,7 +67,7 @@ const DEFAULT_PROJECTS = [
     title: "Este Es Mi Portfolio",
     description:
       "Mi portafolio personal construido con Next.js, Material-UI y GSAP para animaciones. Presenta mis proyectos, habilidades y experiencia profesional.",
-    siteUrl: "https://example-tasks.com",
+    siteUrl: "https://nexosdweb.vercel.app/",
     repoUrl: "https://github.com/SebastianAvila/portafolio.git",
     isReversed: true,
   },
@@ -158,12 +158,6 @@ export async function getStaticProps() {
       }
     }
 
-    console.log(
-      `✓ Contentful data loaded: ${
-        data.projectCollection.items?.length || 0
-      } projects, ${iconsArray.length} icons`,
-    );
-    console.log("Projects from Contentful:", data?.projectCollection.items);
     return {
       props: {
         projectsArray:

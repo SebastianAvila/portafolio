@@ -9,9 +9,9 @@ import {ColorModeContext} from '../../../pages/_app';
 import {useContext} from 'react';
 import Logo from '../Logo/Logo';
 
+gsap.registerPlugin(ScrollToPlugin);
 
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
-    gsap.registerPlugin(ScrollToPlugin);
     const colorMode = useContext(ColorModeContext)
     const color = colorMode.mode === 'light'
         ? 'black'

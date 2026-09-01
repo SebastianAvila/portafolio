@@ -53,7 +53,7 @@ const ContactBox = ({t1, t2, t3,target,href} : IContactBox) => {
                     cursor:'pointer',
                     textAlign: {
                         xs: 'center',
-                        sm: 'revert'
+                        sm: 'left'
                     },
                     fontWeight: '400'
                 }}>
@@ -67,7 +67,7 @@ const ContactBox = ({t1, t2, t3,target,href} : IContactBox) => {
                     },
                     textAlign: {
                         xs: 'center',
-                        sm: 'revert'
+                        sm: 'left'
                     },
                     fontWeight: '300'
                 }}>

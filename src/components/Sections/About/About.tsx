@@ -64,7 +64,7 @@ const About = () => {
               ></Box>
               <Image
                 alt="Personal Image"
-                className="img1 "
+                className="aboutImg"
                 layout="fill"
                 src="/images/personal_profile.png"
               />

@@ -1,5 +1,4 @@
-import type {AppProps}
-from 'next/app'
+import type { AppProps } from 'next/app'
 import '../styles/styles.css';
 import './blog/blog.css'
 import {ThemeProvider} from '@emotion/react'
@@ -30,14 +29,9 @@ function MyApp({Component, pageProps} : AppProps) {
 
     return <ColorModeContext.Provider value={colorMode}>
 
-        <ThemeProvider theme={{
-            ...Theme
-        }}>
+        <ThemeProvider theme={Theme}>
             <CssBaseline/>
-
-  
-                <Component {...pageProps}/>
-           
+            <Component {...pageProps}/>
         </ThemeProvider>
     </ColorModeContext.Provider>
 }

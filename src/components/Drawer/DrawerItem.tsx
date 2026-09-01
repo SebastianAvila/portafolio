@@ -11,21 +11,31 @@ const DrawerItem = ({text, Icon, url, toggleDrawer, isToggleTheme} : IDrawerItem
     let isScrollTo = text === 'Projects';
     const colorMode = useContext(ColorModeContext)
 
+    const scrollToProjects = () => {
+        setTimeout(() => gsap.to(window, {
+            duration: 2,
+            scrollTo: `#ProjectSection`
+        }), 150);
+    }
+
     return (
         <ListItem
             onClick={() => {
             if (isToggleTheme) {
                 toggleDrawer(false);
-                isToggleTheme && colorMode.toggleColorMode()
+                colorMode.toggleColorMode()
                 return;
             }
             toggleDrawer(false);
-            router.push(`${url || '/'}`);
-            isScrollTo  && gsap.to(window, {
-                duration: 2,
-                scrollTo: `#ProjectSection`
-            });
-            // isToggleTheme && colorMode.toggleColorMode()
+            if (isScrollTo) {
+                if (router.pathname === '/') {
+                    scrollToProjects();
+                } else {
+                    router.push('/').then(scrollToProjects);
+                }
+                return;
+            }
+            router.push(url || '/');
         }}
             disablePadding
             sx={{

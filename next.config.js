@@ -12,6 +12,7 @@ const nextConfig = {
       'www.svgrepo.com',
       'images.unsplash.com',
       'res.cloudinary.com',
+      'images.ctfassets.net',
     ],
   },
 

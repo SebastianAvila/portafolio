@@ -19,9 +19,10 @@ const ReadMore = ({children} : any) => {
             }
         }}>
 
-            {isReadMore
+            {typeof text === 'string' && isReadMore
                 ? text.slice(0, 90)
                 : text}
+            {typeof text === 'string' && text.length > 90 && (
             <span
                 style={{
                 cursor: 'pointer',
@@ -29,9 +30,10 @@ const ReadMore = ({children} : any) => {
             }}
                 onClick={toggleReadMore}>
                 {isReadMore
-                    ? "...read more"
+                    ? "... read more"
                     : " show less"}
             </span>
+            )}
         </Typography>
     );
 };

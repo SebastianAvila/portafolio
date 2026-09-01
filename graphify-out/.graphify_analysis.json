@@ -1,0 +1,317 @@
+{
+  "communities": {
+    "0": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "ref_next_env_d_ts",
+      "ref_node_modules",
+      "ref_ts",
+      "ref_tsx",
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "1": [
+      "layout_layout",
+      "layout_layout_layout",
+      "pages_app",
+      "pages_app_colormodecontext",
+      "pages_app_myapp",
+      "pages_blog_index",
+      "pages_blog_index_index",
+      "src_components_drawer_drawer",
+      "src_components_drawer_drawer_customdrawer",
+      "src_components_drawer_draweritem",
+      "src_components_drawer_draweritem_draweritem",
+      "src_components_footer_footer",
+      "src_components_footer_footer_copyright",
+      "src_components_footer_footer_footer",
+      "src_components_logo_logo",
+      "src_components_logo_logo_logo",
+      "src_components_navbar_navbar",
+      "src_components_navbar_navbar_links",
+      "src_components_navbar_navbar_navbar",
+      "src_hooks_themehook",
+      "src_hooks_themehook_themehook",
+      "src_types_types_idraweritem",
+      "src_types_types_ilayout"
+    ],
+    "2": [
+      "eslint",
+      "eslint_config_next",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript"
+    ],
+    "3": [
+      "emailjs_browser",
+      "emotion_react",
+      "emotion_styled",
+      "gsap",
+      "mui_icons_material",
+      "mui_material",
+      "next",
+      "package_dependencies",
+      "package_dependencies_emailjs_browser",
+      "package_dependencies_emotion_react",
+      "package_dependencies_emotion_styled",
+      "package_dependencies_gsap",
+      "package_dependencies_mui_icons_material",
+      "package_dependencies_mui_material",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_swiper",
+      "react",
+      "react_dom",
+      "swiper"
+    ],
+    "4": [
+      "pages_contact",
+      "pages_contact_contact",
+      "src_components_contact_contactbox",
+      "src_components_contact_contactbox_contactbox",
+      "src_components_contact_socialmedia",
+      "src_components_contact_socialmedia_socialmedia",
+      "src_components_contact_socialmedia_socialmediaarray",
+      "src_components_contact_socialmediaicon",
+      "src_components_contact_socialmediaicon_socialmediaicon",
+      "src_components_mui_input",
+      "src_components_mui_input_input",
+      "src_components_sections_hero_hero",
+      "src_components_sections_hero_hero_hero",
+      "src_gsap_herosectionanimation",
+      "src_gsap_herosectionanimation_herosectionanimation",
+      "src_types_types_icontactbox",
+      "src_types_types_iinput"
+    ],
+    "5": [
+      "src_components_mui_customlink",
+      "src_components_mui_customlink_customlink",
+      "src_components_sections_hero_hero_btnstyles",
+      "src_components_sections_projects_projectcard",
+      "src_components_sections_projects_projectcard_projectcard",
+      "src_components_sections_projects_projects",
+      "src_components_sections_projects_projects_projects",
+      "src_types_types",
+      "src_types_types_icustomdrawer",
+      "src_types_types_icustomlink",
+      "src_types_types_inavbar",
+      "src_types_types_iprojectcard",
+      "src_types_types_iprojects",
+      "src_types_types_isocialmedia",
+      "src_types_types_itoolcard"
+    ],
+    "6": [
+      "src_components_sections_perks_perkcard",
+      "src_components_sections_perks_perkcard_perkcard",
+      "src_components_sections_perks_perks",
+      "src_components_sections_perks_perks_centeredstyles",
+      "src_components_sections_perks_perks_perks",
+      "src_components_sections_perks_perks_perksarray",
+      "src_components_sections_techtools_techtools",
+      "src_components_sections_techtools_techtools_default_icons",
+      "src_components_sections_techtools_techtools_techtools",
+      "src_components_sections_techtools_toolcard",
+      "src_components_sections_techtools_toolcard_toolcard",
+      "src_gsap_maintitleanimation",
+      "src_gsap_maintitleanimation_maintitleanimation"
+    ],
+    "7": [
+      "pages_index",
+      "pages_index_default_projects",
+      "pages_index_getstaticprops",
+      "pages_index_home",
+      "src_components_sections_about_about",
+      "src_components_sections_about_about_about",
+      "src_components_sections_calltoaction_cta",
+      "src_components_sections_calltoaction_cta_cta",
+      "src_components_sections_readmore_readmore",
+      "src_components_sections_readmore_readmore_readmore",
+      "src_gsap_cursoranimation",
+      "src_gsap_cursoranimation_cursoranimation"
+    ],
+    "8": [
+      "eslintrc",
+      "eslintrc_extends",
+      "ref_next_core_web_vitals"
+    ],
+    "9": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "10": [
+      "next_env_d",
+      "next_env_d_rationale_4"
+    ],
+    "11": [
+      "pages_blog_postname",
+      "pages_blog_postname_index"
+    ],
+    "12": [
+      "pages_document",
+      "pages_document_document"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08,
+    "1": 0.16205533596837945,
+    "2": 0.09090909090909091,
+    "3": 0.09523809523809523,
+    "4": 0.17647058823529413,
+    "5": 0.20952380952380953,
+    "6": 0.28205128205128205,
+    "7": 0.24242424242424243,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
+      "id": "pages_app_colormodecontext",
+      "label": "ColorModeContext",
+      "degree": 9
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "src_gsap_herosectionanimation_herosectionanimation",
+      "label": "HeroSectionAnimation()",
+      "degree": 5
+    },
+    {
+      "id": "src_gsap_maintitleanimation_maintitleanimation",
+      "label": "MainTitleAnimation()",
+      "degree": 5
+    },
+    {
+      "id": "layout_layout_layout",
+      "label": "Layout()",
+      "degree": 4
+    },
+    {
+      "id": "src_components_sections_perks_perks_centeredstyles",
+      "label": "centeredStyles",
+      "degree": 4
+    },
+    {
+      "id": "tsconfig_compileroptions_lib",
+      "label": "lib",
+      "degree": 4
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 4
+    },
+    {
+      "id": "src_hooks_themehook_themehook",
+      "label": "ThemeHook()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Contact()",
+      "target": "HeroSectionAnimation()",
+      "source_files": [
+        "pages/contact.tsx",
+        "src/gsap/HeroSectionAnimation.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `Contact()` unexpectedly reaches hub `HeroSectionAnimation()`"
+    },
+    {
+      "source": "MyApp()",
+      "target": "ThemeHook()",
+      "source_files": [
+        "pages/_app.tsx",
+        "src/Hooks/ThemeHook.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Home()",
+      "target": "CursorAnimation()",
+      "source_files": [
+        "pages/index.tsx",
+        "src/gsap/CursorAnimation.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Hero()",
+      "target": "HeroSectionAnimation()",
+      "source_files": [
+        "src/components/Sections/Hero/Hero.tsx",
+        "src/gsap/HeroSectionAnimation.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "Perks()",
+      "target": "MainTitleAnimation()",
+      "source_files": [
+        "src/components/Sections/Perks/Perks.tsx",
+        "src/gsap/MainTitleAnimation.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

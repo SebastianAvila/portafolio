@@ -2,35 +2,39 @@ import {Box} from '@mui/material'
 import CustomLink from '../Mui/CustomLink'
 import {useRouter} from 'next/router';
 import gsap from 'gsap';
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Logo = ({toggleDrawer, colorMode, color} : any) => {
     const router = useRouter()
+    const scrollToHero = () => {
+        if (router.pathname !== '/') {
+            router.push('/').then(() => {
+                setTimeout(() => gsap.to(window, {
+                    duration: 1,
+                    scrollTo: `#hero`
+                }), 150);
+            });
+        } else {
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: `#hero`
+            });
+        }
+    }
     return (
         <Box
             onClick={() => {
             toggleDrawer(false);
-            if (router.pathname !== '/') 
-         {   console.log('pathname: ', router);
-         router.push('/');
-        }
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: `#hero`
-                });
-            }}
+            scrollToHero();
+        }}
             sx={{
                 flex:1,
                 cursor: 'pointer',
             display: 'flex',
             alignItems: 'center'
         }}>
-
-            <img
-                className={`${colorMode.mode === 'dark'
-                ? 'logoImg '
-                : ''}small`}
-                src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
-                alt=""/>
             <CustomLink color={color} fontWeight='600' text='Bienvenidos a mi portafolio' href='/'/>
         </Box>
     )

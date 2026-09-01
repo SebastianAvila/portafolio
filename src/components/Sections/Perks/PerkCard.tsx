@@ -1,24 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import gsap from 'gsap'
-import {useEffect} from 'react';
-
 const PerkCard = ({text,title,Icon} : any) => {
-    useEffect(() => {
-
-   
-        gsap.to('.perkCard ', {
-            opacity: 1,
-            y: 0,
-            delay:.25,
-            stagger: .25,
-            scrollTrigger: {
-                trigger: '.perkCard h2',
-                start: 'top 80%'
-            }
-        })
-
-    }, [])
     return (
         <Box
             className='perkCard'
