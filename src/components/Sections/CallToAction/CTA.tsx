@@ -1,5 +1,6 @@
 import {Box, Button, Container} from "@mui/material"
 import Typography from '@mui/material/Typography';
+import {useTheme} from "@mui/material/styles";
 import {useRouter} from "next/router";
 import {useEffect} from "react";
 import gsap from 'gsap'
@@ -9,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CTA = () => {
     const router = useRouter()
+    const theme = useTheme();
+    const accent = theme.palette.primary.main;
 
     useEffect(() => {
 
@@ -54,7 +57,7 @@ const CTA = () => {
                 top: 0,
                 left: '-100%',
                 position: 'absolute',
-                background: '#0092ff'
+                background: accent
             }}>
 
                 <Container
@@ -69,6 +72,7 @@ const CTA = () => {
                         className='t25o0'
                         sx={{
                         textAlign: 'center',
+                        color: 'white', // el fondo siempre es el acento saturado: el texto siempre blanco
                         fontSize: {
                             xs: '1.5em',
                             sm: '2em',
@@ -97,7 +101,7 @@ const CTA = () => {
                             mt: '.5em',
                             ':hover': {
                                 background: 'white',
-                                color: '#0092ff'
+                                color: accent
                             },
                             padding: '.5em 3.5em'
                         }}

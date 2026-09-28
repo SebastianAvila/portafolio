@@ -1,4 +1,5 @@
 import { Container, Box, Grid } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import ReadMore from "../ReadMore/ReadMore";
@@ -6,6 +7,8 @@ import { ColorModeContext } from "../../../../pages/_app";
 import { useContext } from "react";
 const About = () => {
   const colorMode = useContext(ColorModeContext);
+  const theme = useTheme();
+  const accent = theme.palette.primary.main;
   return (
     <>
       <Container
@@ -33,8 +36,8 @@ const About = () => {
                 height: "450px",
                 margin: "0 auto",
                 boxShadow: {
-                  xs: "-.5em 1.5em 0px #0092ff",
-                  sm: "-1.5em 1.5em 0px #0092ff",
+                  xs: `-.5em 1.5em 0px ${accent}`,
+                  sm: `-1.5em 1.5em 0px ${accent}`,
                 },
                 position: "relative",
               }}

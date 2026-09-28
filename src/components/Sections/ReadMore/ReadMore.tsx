@@ -1,8 +1,11 @@
 import {Typography} from "@mui/material";
+import {useTheme} from "@mui/material/styles";
 import {useState} from "react";
 
 const ReadMore = ({children} : any) => {
     const text = children;
+    const theme = useTheme();
+    const accent = theme.palette.primary.main;
     const [isReadMore,
         setIsReadMore] = useState(true);
     const toggleReadMore = () => {
@@ -26,7 +29,7 @@ const ReadMore = ({children} : any) => {
             <span
                 style={{
                 cursor: 'pointer',
-                color: '#0092ff'
+                color: accent
             }}
                 onClick={toggleReadMore}>
                 {isReadMore

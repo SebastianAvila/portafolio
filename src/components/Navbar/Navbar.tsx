@@ -1,4 +1,5 @@
 import {AppBar,Typography,Button,IconButton} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import {useContext} from 'react';
@@ -42,6 +43,8 @@ const Navbar = ({toggleDrawer,navbarSx} : INavbar) => {
     const color = colorMode.mode === 'light'
         ? 'black'
         : 'white';
+    const theme = useTheme();
+    const accent = theme.palette.primary.main;
     const router= useRouter()
     return (
         <AppBar
@@ -67,7 +70,7 @@ const Navbar = ({toggleDrawer,navbarSx} : INavbar) => {
                 <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode}/>
                 <Button 
                 onClick={()=>router.push('/blog')}
-                sx={{mr:'1em',fontWeight:'500',':hover':{color:'#0092ff'},color:color}}>
+                sx={{mr:'1em',fontWeight:'500',':hover':{color:accent},color:color}}>
                     {/* <Typography> */}
                     Blog
                     {/* </Typography> */}

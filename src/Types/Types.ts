@@ -61,11 +61,17 @@ export interface IProjects {
     img : string;
     title : string;
     siteUrl : string;
-    repoUrl : string;
+    repoUrl ?: string;
     description : string;
+    type?: "agency" | "client" | "demo";
+    tagline?: string;
+    features?: string[];
 
 }
 export interface IProjectCard extends IProjects {
     isReversed?: boolean;
+    className?: string;
+}
+export interface IAgencyCard extends IProjects {
     className?: string;
 }

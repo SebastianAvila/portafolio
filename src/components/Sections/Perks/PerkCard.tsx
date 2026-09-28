@@ -1,6 +1,9 @@
 import { Box, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const PerkCard = ({text,title,Icon} : any) => {
+    const theme = useTheme();
+    const accent = theme.palette.primary.main;
     return (
         <Box
             className='perkCard'
@@ -19,7 +22,7 @@ const PerkCard = ({text,title,Icon} : any) => {
                 sx={{
               
                 boxSizing: 'content-box',
-                background: '#0092ff',
+                background: accent,
                 color: 'white',
                 padding: '.55em',
                 borderRadius: '50%'

@@ -6,6 +6,7 @@ import {
   FormControl,
   TextField,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useRef, useEffect, useState, useContext } from "react";
 import HeroSectionAnimation from "../src/gsap/HeroSectionAnimation";
 import gsap from "gsap";
@@ -19,6 +20,8 @@ import { ColorModeContext } from "./_app";
 
 const Contact = () => {
   const colorMode = useContext(ColorModeContext);
+  const theme = useTheme();
+  const accent = theme.palette.primary.main;
 
   const ref = useRef();
   const form = useRef();
@@ -91,7 +94,7 @@ const Contact = () => {
                 sm: "86%",
               },
               background: "transparent",
-              backgroundImage: "radial-gradient(#0092ff 2px, transparent 0)",
+              backgroundImage: `radial-gradient(${accent} 2px, transparent 0)`,
               backgroundSize: "15px 13px",
             }}
           ></Box>
@@ -109,7 +112,7 @@ const Contact = () => {
               opacity: 0,
               right: "-4%",
               background: "transparent",
-              backgroundImage: "radial-gradient(#0092ff 2px, transparent 0)",
+              backgroundImage: `radial-gradient(${accent} 2px, transparent 0)`,
               backgroundSize: "15px 13px",
             }}
           ></Box>
@@ -233,7 +236,7 @@ const Contact = () => {
                   },
                   background: "transparent",
                   border: "1px solid",
-                  color: "#0092ff",
+                  color: accent,
                   ":hover": {
                     border: "1px solid transparent",
                   },

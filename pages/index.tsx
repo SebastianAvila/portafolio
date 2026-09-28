@@ -26,7 +26,6 @@ const Home: NextPage = ({ projectsArray, iconsArray }: any) => {
       <Box
         sx={{
           margin: "0 auto",
-          color: "white",
         }}
       >
         <Hero />
@@ -54,22 +53,72 @@ const Home: NextPage = ({ projectsArray, iconsArray }: any) => {
 export default Home;
 
 // Array local de proyectos (fallback si Contentful está vacío)
+// type: "agency" (destacado, va primero) | "client" (proyectos reales) | "demo" (demostraciones)
 const DEFAULT_PROJECTS = [
+  {
+    title: "NEXO SD - Soluciones Digitales",
+    tagline: "Mi agencia de desarrollo de software",
+    description:
+      "NEXO SD es el estudio de desarrollo que fundé en Yucatán. Diseñamos y construimos sitios web, software a la medida y aplicaciones para negocios reales, cubriendo todo el proceso: descubrimiento, arquitectura, desarrollo, pruebas e implementación, con soporte continuo después del lanzamiento.",
+    features: [
+      "Desarrollo Web",
+      "Software a Medida",
+      "Progressive Web Apps",
+      "Infraestructura",
+      "Automatización",
+    ],
+    img: "/images/nexo-sd.png",
+    siteUrl: "https://www.nexosd.com",
+    type: "agency",
+  },
+  {
+    title: "CESP - Centro de Estudios Superiores Peninsular",
+    tagline: "Cliente real, vía NEXO SD",
+    description:
+      "Sitio institucional para CESP: presentación de la institución, carreras y licenciaturas, proceso de admisión y formulario de contacto. Next.js, React, Tailwind, SEO.",
+    img: "/images/cesp.png",
+    siteUrl: "https://cesp-pied.vercel.app/",
+    type: "client",
+  },
   {
     title: "MFA App - Soft Administrativo",
     description:
       "App web para la gestion de personal contable, organizacion de eventos y facilitación de procesos administrativos. Construida con Vue.js, Node.js y Firebase. ",
+    img: "/images/mfa-app.png",
     siteUrl: "https://e-compliance.web.app/",
-    repoUrl: "https://github.com/SebastianAvila/mfa_app.git",
-    isReversed: false,
+    type: "client",
   },
   {
-    title: "Este Es Mi Portfolio",
+    title: "Hotel Boutique Valladolid",
     description:
-      "Mi portafolio personal construido con Next.js, Material-UI y GSAP para animaciones. Presenta mis proyectos, habilidades y experiencia profesional.",
-    siteUrl: "https://nexosdweb.vercel.app/",
-    repoUrl: "https://github.com/SebastianAvila/portafolio.git",
-    isReversed: true,
+      "Landing premium para hotel boutique: diseño moderno y experiencia enfocada en conversión. Next.js, React, SEO.",
+    img: "/images/demo-hotel.jpg",
+    siteUrl: "https://hotel.nexosd.com",
+    type: "demo",
+  },
+  {
+    title: "Clínica Dental Premium",
+    description:
+      "Página corporativa para clínica dental, responsive y enfocada en UI/UX. Next.js, Responsive, UI/UX.",
+    img: "/images/demo-dental.jpg",
+    siteUrl: "https://clinica.dental.nexosd.com",
+    type: "demo",
+  },
+  {
+    title: "Eventos Café",
+    description:
+      "Landing comercial con animaciones y enfoque SEO para negocio de eventos y café. React, Animations, SEO.",
+    img: "/images/demo-cafe.jpg",
+    siteUrl: "https://coffe.nexosd.com/",
+    type: "demo",
+  },
+  {
+    title: "PC Builder",
+    description:
+      "Aplicación a medida para configurar y cotizar PCs: API, base de datos y experiencia de usuario cuidada. Next.js, API, Database, UI/UX.",
+    img: "/images/pc-builder.jpg",
+    siteUrl: "https://pc-configurator.nexosd.com",
+    type: "demo",
   },
 ];
 

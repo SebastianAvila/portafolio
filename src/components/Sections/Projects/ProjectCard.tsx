@@ -7,7 +7,6 @@ const ProjectCard = ({
     isReversed,
     img,
     className,
-    repoUrl,
     siteUrl,
     title,
     description
@@ -145,28 +144,10 @@ const ProjectCard = ({
                                 sx={{
                                 ...btnStyles,
                                 padding: '.5em .8em',
-                                color: 'white',
-                                border: '1px solid #0092ff'
+                                color: 'white'
                             }}>
                                 <Typography fontSize='12px'>
                                     Live Site
-                                </Typography>
-                            </Button>
-                        </a>}
-                        {repoUrl && <a href={repoUrl} rel="noreferrer" target="_blank">
-
-                            <Button
-                                variant='text'
-                                sx={{
-                                ...btnStyles,
-                                padding: '.5em .8em',
-                                color: '#0092ff',
-                                ':hover': {
-                                    color: '#0092ff'
-                                }
-                            }}>
-                                <Typography fontSize='12px'>
-                                    Check Code
                                 </Typography>
                             </Button>
                         </a>}

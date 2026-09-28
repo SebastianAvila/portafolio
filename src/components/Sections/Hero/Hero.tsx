@@ -6,6 +6,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
@@ -21,6 +22,8 @@ const Hero = () => {
   const ref = useRef();
   const q = gsap.utils.selector(ref);
   gsap.registerPlugin(ScrollToPlugin);
+  const theme = useTheme();
+  const accent = theme.palette.primary.main;
   useEffect(() => {
     HeroSectionAnimation(q);
   }, []);
@@ -98,7 +101,12 @@ const Hero = () => {
                   opacity: 0,
                   borderRadius: 0,
                   padding: ".75em 2.5em",
-                  color: "white",
+                  color: accent,
+                  // la sombra decorativa del .offset usa estas variables CSS;
+                  // sin esto se queda fija en morado y no combina con el azul del tema oscuro
+                  "--color": accent,
+                  "--hover":
+                    theme.palette.mode === "light" ? "#230740" : "#0066b3",
                   flex: { xs: 1, sm: "inherit" },
                 }}
                 onClick={() =>
@@ -204,7 +212,7 @@ const Hero = () => {
                   top: "105%",
                   overflow: "hidden",
                   opacity: 0,
-                  background: "#360a5c", //Controla el color de fondo de la caja de la cita
+                  background: accent, // color de acento: azul en oscuro, morado en claro
                 }}
               >
                 <Typography
@@ -212,6 +220,7 @@ const Hero = () => {
                     fontWeight: "300",
                     fontSize: ".85em",
                     padding: "1em",
+                    color: "white", // el fondo siempre es un acento saturado: el texto siempre blanco
                   }}
                 >
                   {`"El secreto está en frenar un segundo después de lo que indica el sentido común y acelerar un segundo antes de lo que impera la lógica"

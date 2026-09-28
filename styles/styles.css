@@ -43,8 +43,9 @@ a :visited {
 }
 
 .icon {
-  width: 130px !important;
-  height: 130px !important;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .ball {
@@ -127,10 +128,9 @@ a :visited {
   box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
 }
 
-.offset {
-  --color: #572364;
-  --hover: #360a5c;
-}
+/* --color / --hover ya no se fijan aquí: los define inline el componente
+   que usa .offset (Hero.tsx), para que combinen con el acento del tema
+   (azul en oscuro, morado en claro) en vez de quedar fijos en morado. */
 
 button {
   color: var(--color);

@@ -8,7 +8,7 @@ import {  Dispatch, SetStateAction, useMemo, useState } from 'react'
 const ThemeHook = (mode : 'light' | 'dark',setMode :  Dispatch<SetStateAction<"light" | "dark">>) => {
   
     const color = mode === 'light'
-    ? '#000000'
+    ? '#15171c'
     : '#ffffff'
     const getDesignTokens = (mode : PaletteMode) => ({
         typography: {
@@ -19,14 +19,14 @@ const ThemeHook = (mode : 'light' | 'dark',setMode :  Dispatch<SetStateAction<"l
             },
             h2: {
                 color: mode === 'light'
-                    ? '#292929'
+                    ? '#2b2d33'
                     : '#b9b9b9',
                 lineHeight: '1.3em'
 
             },
             h3: {
                 color: mode === 'light'
-                    ? '#737373'
+                    ? '#5b5f66'
                     : '#a7a7a7',
                 lineHeight: '1.3em'
 
@@ -37,40 +37,45 @@ const ThemeHook = (mode : 'light' | 'dark',setMode :  Dispatch<SetStateAction<"l
         },
 
         palette: {
-      
+
             mode,
-         
+
             ...(mode === 'light'
                 ? {
+                    // Acento: morado (marca personal) en tema claro
                     primary: {
-                        main: '#0092ff'
+                        main: '#360a5c'
                     },
 
-                    // palette values for light mode
+                    // palette values for light mode: blanco empresarial, no blanco puro
+                    // (deja que las tarjetas blancas -white puro- resalten sobre este fondo)
 
-                    divider: '#d6d6d6',
+                    divider: '#e2e4e8',
                     Drawer: '#ffffff',
 
                     background: {
-                        default: '#ffffff'
+                        default: '#f6f7f9',
+                        paper: '#ffffff'
                     },
-             
+
                     text: {
-                        primary: '#000000'
+                        primary: '#15171c'
                     },
                 }
                 : {
-                     
+
                     // palette values for dark mode
                   divider: '#353535',
                     background: {
                         default: '#232323'
                     },
+                    // Acento: azul en tema oscuro
                     primary: {
                         main: '#0092ff'
                     },
                     text: {
-                        primary: '#000000'
+                        // antes estaba en '#000000': texto negro sobre fondo oscuro, invisible
+                        primary: '#ffffff'
                     }
                 })
         }
